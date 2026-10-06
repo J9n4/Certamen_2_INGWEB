@@ -30,7 +30,6 @@ const categorias = computed(() => {
             <option v-for = "cat in categorias" :key="cat" :value="cat">{{ cat }}</option>
         </select>
     </div>
-    
     <div v-if="serviciosFiltrados.length > 0" class="grid">
       <ServicioCard v-for="servicio in serviciosFiltrados":key="servicio.id":servicio="servicio"/>
     </div>
