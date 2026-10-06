@@ -6,7 +6,7 @@ import ServicioCard from '../components/ServicioCard.vue'
 const busqueda = ref('')
 const categoriaSeleccionada = ref('')
 //fav
-const favoritos = ref([])
+const favoritos = ref(JSON.parse(localStorage.getItem('favoritos')) || [])
 
 function toggleFavorito (id){
     const index = favoritos.value.indexOf(id)
@@ -14,8 +14,9 @@ function toggleFavorito (id){
         favoritos.value.push(id) //agregar
 
     } else{
-        favoritos.value.slice(index,1) //eliminar
+        favoritos.value.splice(index,1) //eliminar
     }
+    localStorage.setItem('favoritos',JSON.stringify(favoritos.value))
 }
 
 //computed
