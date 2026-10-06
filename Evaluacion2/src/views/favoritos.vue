@@ -15,7 +15,7 @@ const serviciosFavoritos = computed (() =>
 //eliminar un favorito
 
 function eliminarFavorito(id){
-    const index = favoritosIds.value.indexof(id)
+    const index = favoritosIds.value.indexOf(id)
     if (index !== -1){
         favoritosIds.value.splice(index,1)
         localStorage.setItem('favoritos', JSON.stringify(favoritosIds.value))
@@ -45,8 +45,8 @@ function eliminarFavorito(id){
 
 <style scoped>
 .favoritos { padding: 2rem; max-width: 1100px; margin: 0 auto; }
-h1 { color: #e6edf3; margin-bottom: 1.5rem; }
-.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.2rem; }
+h1 { color: #111; margin-bottom: 1.5rem; }
+.grid { display: flex; flex-wrap: wrap; gap: 1.2rem; }
 .vacio {
   text-align: center;
   padding: 3rem;

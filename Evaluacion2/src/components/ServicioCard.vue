@@ -22,8 +22,8 @@ const emit = defineEmits(['toggleFavorito'])
     <div class="card-footer">
       <strong class="precio">${{ servicio.precio.toLocaleString('es-CL') }}</strong>
       <div class="acciones">
-        <button class="btn-fav" @click="emit('toggleFavorito', servicio.id)">
-            {{ esFavorito ? 'Favorito' : 'Favoritos' }}
+        <button class="btn-fav" :class="{ 'es-fav': esFavorito }" @click="emit('toggleFavorito', servicio.id)">
+            {{ esFavorito ? 'Favorito' : 'Favorito' }}
         </button>
       </div>
       <RouterLink :to="`/servicios/${servicio.id}`" class="btn-detalle">Ver detalle →</RouterLink>
@@ -40,6 +40,8 @@ const emit = defineEmits(['toggleFavorito'])
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
+  min-width: 300px;
+  flex: 1 1 300px;
   transition: transform 0.2s, box-shadow 0.2s;
 }
 .card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(233,69,96,0.2); }
@@ -55,4 +57,7 @@ p { color: #8b949e; font-size: 0.9rem; margin: 0; flex: 1; }
 .precio { color: #58a6ff; font-size: 1rem; }
 .btn-detalle { background: #e94560; color: #fff; padding: 0.4rem 0.9rem; border-radius: 6px; text-decoration: none; font-size: 0.85rem; transition: background 0.2s; }
 .btn-detalle:hover { background: #c73652; }
+.btn-fav { background: #2e303a; color: #fff; padding: 0.4rem 0.9rem; border: 1px solid #4a4d5a; border-radius: 6px; font-size: 0.85rem; cursor: pointer; transition: all 0.2s; }
+.btn-fav:hover { background: #4a4d5a; }
+.btn-fav.es-fav { background: #e94560; border-color: #e94560; }
 </style>

@@ -7,7 +7,7 @@ const route = useRoute()
 <template>
   <nav class="navbar">
     <div class="navbar-brand">
-      <RouterLink to="/">MiApp</RouterLink>
+      <RouterLink to="/">Servicios Ñuble</RouterLink>
     </div>
     <ul class="navbar-links">
       <li>

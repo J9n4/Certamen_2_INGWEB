@@ -1,5 +1,5 @@
 <script setup>
-    import { useRoute, RouteLink} from 'vue-router'
+    import { useRoute, RouterLink } from 'vue-router'
     import { servicios } from '../services/servicios.js';
 
     //Obtencion de id
@@ -11,7 +11,7 @@
 
 <template>
     <main class="detalle">
-        <div v-if = "servicios">
+        <div v-if="servicio">
             <RouterLink to = "/servicios" class="volver">volver al catalogo</RouterLink>
             <div class="card-detalle">
                 <div class="header">
@@ -28,7 +28,7 @@
         <div v-else class="no-encontrado">
             <h2>Servicio no encontrado</h2>
             <p>El ID <strong>#{{ route.params.id }}</strong>no corresponde a ningun servicio o catalogo</p>
-            <RouteLink to = "/servicios" class="volver">Volver al catalogo</RouteLink>
+            <RouterLink to="/servicios" class="volver">Volver al catalogo</RouterLink>
         </div>
     </main>
 </template>

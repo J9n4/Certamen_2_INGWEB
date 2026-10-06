@@ -95,16 +95,16 @@ function reset(){
 
 <style scoped>
 .contacto { padding: 2rem; max-width: 600px; margin: 0 auto; }
-h1 { color: #e6edf3; margin-bottom: 1.5rem; }
+h1 { color: #111; margin-bottom: 1.5rem; }
 .form { display: flex; flex-direction: column; gap: 1.2rem; }
 .campo { display: flex; flex-direction: column; gap: 0.4rem; }
-.campo label { color: #8b949e; font-size: 0.9rem; font-weight: 600; }
+.campo label { color: #333; font-size: 0.9rem; font-weight: 600; }
 .campo input, .campo select, .campo textarea {
   padding: 0.7rem 1rem;
   border-radius: 8px;
-  border: 1px solid #0f3460;
-  background: #16213e;
-  color: #e6edf3;
+  border: 1px solid #ccc;
+  background: #f9f9f9;
+  color: #111;
   font-size: 0.95rem;
   outline: none;
   transition: border-color 0.2s;
@@ -144,7 +144,7 @@ h1 { color: #e6edf3; margin-bottom: 1.5rem; }
   flex-direction: column;
   gap: 0.8rem;
 }
-.confirmacion strong { color: #e6edf3; }
+.confirmacion strong { color: #111; }
 .btn-reset {
   margin-top: 0.5rem;
   padding: 0.6rem 1.4rem;

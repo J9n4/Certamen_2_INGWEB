@@ -84,6 +84,14 @@ const categorias = computed(() => {
 
 <style scoped>
 .catalogo { padding: 2rem; max-width: 1100px; margin: 0 auto; }
-h1 { color: #e6edf3; margin-bottom: 1.5rem; }
-.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.2rem; }
+h1 { color: #111; margin-bottom: 1.5rem; }
+.filtros { display: flex; gap: 1rem; margin-bottom: 1.5rem; }
+.filtros input, .filtros select {
+  padding: 0.6rem 1rem; border-radius: 8px;
+  border: 1px solid #ccc; background: #f9f9f9;
+  color: #111; font-size: 0.95rem; outline: none;
+  flex: 1; min-width: 200px; max-width: 300px;
+}
+.filtros input:focus, .filtros select:focus { border-color: #e94560; }
+.grid { display: flex; flex-wrap: wrap; gap: 1.2rem; }
 </style>
