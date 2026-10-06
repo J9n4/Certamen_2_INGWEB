@@ -1,12 +1,12 @@
 <script setup>
 import { RouterLink } from 'vue-router'
-
+//props
 defineProps({
-  servicio: {
-    type: Object,
-    required: true
-  }
+  servicio: {type: Object,required: true},
+  esFavorito: { type: Boolean, default: false}
 })
+//emmits
+const emit = defineEmits(['toggleFavorito'])
 </script>
 
 <template>
@@ -21,6 +21,11 @@ defineProps({
     <p>{{ servicio.descripcion }}</p>
     <div class="card-footer">
       <strong class="precio">${{ servicio.precio.toLocaleString('es-CL') }}</strong>
+      <div class="acciones">
+        <button class="btn-fav" @click="emit('toggleFavorito', servicio.id)">
+            {{ esFavorito ? 'Favorito' : 'Favoritos' }}
+        </button>
+      </div>
       <RouterLink :to="`/servicios/${servicio.id}`" class="btn-detalle">Ver detalle →</RouterLink>
     </div>
   </div>
